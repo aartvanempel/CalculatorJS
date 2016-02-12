@@ -20,20 +20,43 @@ clear.onclick = clearState;
 // functions
 function numberState(event) {
   console.log("is number");
-  var text = event.target.textContent;
-  var prevNum = display.value;
-  display.setAttribute("value", prevNum + text);
+  var buttonText = event.target.textContent;
+  var displayText = display.value;
+  var newText = displayText + buttonText;
+  display.value = newText;
 }
 
+var firstNumText;
+var operator;
 function operatorState(event) {
   console.log("is operator");
+  firstNumText = display.value;
+  operator = event.target.textContent;
+  display.value = "";
 }
 
 function calculateState(event) {
-  console.log("is calculate");
+    var firstNumInt = parseInt(firstNumText);
+    var secondNumInt = parseInt(display.value);
+    var result;
+
+    if (operator == "+") {
+      result = firstNumInt + secondNumInt;
+    }
+    if (operator == "-") {
+      result = firstNumInt - secondNumInt;
+    }
+    if (operator == "/") {
+      result = firstNumInt / secondNumInt;
+    }
+    if (operator == "*") {
+      result = firstNumInt * secondNumInt;
+    }
+
+    display.value = result;
 }
 
 function clearState(event) {
   console.log("is clear");
-  display.setAttribute("value", "");
+  display.value = "";
 }
