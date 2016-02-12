@@ -1,1 +1,1 @@
-Rekenmachientje
+Simpel rekenmachientje in javascript.
