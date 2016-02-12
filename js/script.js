@@ -3,9 +3,6 @@ var numbers = document.querySelectorAll(".number");
 var operators = document.querySelectorAll(".operator");
 var equalTo = document.querySelector(".equal-to");
 var clear = document.querySelector(".clear");
-//
-var operator;
-var getal1;
 
 // klik acties
 for (var i = 0; i < numbers.length; i++) {
@@ -19,7 +16,6 @@ clear.onclick = clearState;
 
 // functions
 function numberState(event) {
-  console.log("is number");
   var buttonText = event.target.textContent;
   var displayText = display.value;
   var newText = displayText + buttonText;
@@ -29,7 +25,6 @@ function numberState(event) {
 var firstNumText;
 var operator;
 function operatorState(event) {
-  console.log("is operator");
   firstNumText = display.value;
   operator = event.target.textContent;
   display.value = "";
@@ -57,6 +52,5 @@ function calculateState(event) {
 }
 
 function clearState(event) {
-  console.log("is clear");
   display.value = "";
 }
